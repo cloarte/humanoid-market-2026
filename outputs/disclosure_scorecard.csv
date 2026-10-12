@@ -1,0 +1,71 @@
+company_id,company,country,item,status,evidence_rows,source_url,note
+agibot,AgiBot,CN,units,◐,shipments.csv:21,https://m.jiemian.com/article/13844477.html,">5,100 cumulative to 2025-12-31; no full-year figure"
+agibot,AgiBot,CN,revenue,✓,valuations_revenue.csv:17,https://www.ithome.com/0/940/205.htm,$150M in 2025
+agibot,AgiBot,CN,paid_deployment,◐,deployment_evidence.csv:11,https://www.cnfin.com/gs-lb/detail/20261005/4477524_1.html,">300 robots (all AgiBot product lines, including robot dogs) at Chimelong Spaceship Park (Hengqin, Zhuhai) (2026-10); count reported by the press, not by the company"
+agibot,AgiBot,CN,hours,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+agibot,AgiBot,CN,customer,✓,deployment_evidence.csv:12,https://tech.ifeng.com/c/8lj1FeeV3To,Fulin Precision (contracted)
+agibot,AgiBot,CN,related_parties,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+agibot,AgiBot,CN,audited,✗,,,Private company; no audited statements found in public filings.
+unitree,Unitree Robotics,CN,units,✓,shipments.csv:9,https://static.cninfo.com.cn/finalpage/2026-08-14/1225472621.PDF,"5,511 in 2025"
+unitree,Unitree Robotics,CN,revenue,✓,valuations_revenue.csv:5,https://static.cninfo.com.cn/finalpage/2026-08-14/1225472621.PDF,$243M in 2025
+unitree,Unitree Robotics,CN,paid_deployment,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+unitree,Unitree Robotics,CN,hours,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+unitree,Unitree Robotics,CN,customer,✓,company_financial_items.csv:14,https://static.cninfo.com.cn/finalpage/2026-08-14/1225472621.PDF,"Beijing Galbot Robotics Co., Ltd. (related party): sales in FY2025 (filing)"
+unitree,Unitree Robotics,CN,related_parties,✓,company_financial_items.csv:13; valuations_revenue.csv:5,https://static.cninfo.com.cn/finalpage/2026-08-14/1225472621.PDF,"RMB 20.2M in FY2025, 1.2% of revenue"
+unitree,Unitree Robotics,CN,audited,✓,,,Listed company (SSE STAR Market: 688836).
+ubtech,UBTech Robotics,CN,units,✓,shipments.csv:20,https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0331/2026033102607.pdf,"1,079 in 2025"
+ubtech,UBTech Robotics,CN,revenue,✓,valuations_revenue.csv:15,https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0331/2026033102607.pdf,$286M in 2025
+ubtech,UBTech Robotics,CN,paid_deployment,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+ubtech,UBTech Robotics,CN,hours,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+ubtech,UBTech Robotics,CN,customer,✓,deployment_evidence.csv:14,https://www.sz.gov.cn/en_szgov/business/news/content/post_12612615.html,Airbus (pilot)
+ubtech,UBTech Robotics,CN,related_parties,✓,company_financial_items.csv:15; valuations_revenue.csv:15,https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0414/2026041401168.pdf,"RMB 154.1M in FY2025, 7.7% of revenue"
+ubtech,UBTech Robotics,CN,audited,✓,,,Listed company (HKEX: 9880).
+galbot,Galbot,CN,units,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+galbot,Galbot,CN,revenue,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+galbot,Galbot,CN,paid_deployment,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+galbot,Galbot,CN,hours,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+galbot,Galbot,CN,customer,✓,deployment_evidence.csv:13,https://www.prnasia.com/story/517052-1.shtml,Baida Precision (603331) and its ecosystem (contracted)
+galbot,Galbot,CN,related_parties,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+galbot,Galbot,CN,audited,✗,,,Private company; no audited statements found in public filings.
+x-square-robot,X Square Robot,CN,units,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+x-square-robot,X Square Robot,CN,revenue,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+x-square-robot,X Square Robot,CN,paid_deployment,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+x-square-robot,X Square Robot,CN,hours,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+x-square-robot,X Square Robot,CN,customer,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+x-square-robot,X Square Robot,CN,related_parties,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+x-square-robot,X Square Robot,CN,audited,✗,,,Private company; no audited statements found in public filings.
+figure-ai,Figure AI,US,units,✗,shipments.csv:15,https://www.therobotreport.com/bmw-group-deploys-figure-03-humanoid-after-tests-previous-version/,No shipments figure; the company states deployed: not disclosed.
+figure-ai,Figure AI,US,revenue,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+figure-ai,Figure AI,US,paid_deployment,✗,deployment_evidence.csv:3,https://figure.ai/news/production-at-bmw,"Hours are disclosed, but not how many robots are at work."
+figure-ai,Figure AI,US,hours,◐,deployment_evidence.csv:3,https://figure.ai/news/production-at-bmw,">1,250 hours (pilot); a pilot, not paid use"
+figure-ai,Figure AI,US,customer,✓,deployment_evidence.csv:2,https://www.therobotreport.com/bmw-group-deploys-figure-03-humanoid-after-tests-previous-version/,"BMW Group, Plant Spartanburg (pilot)"
+figure-ai,Figure AI,US,related_parties,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+figure-ai,Figure AI,US,audited,✗,,,Private company; no audited statements found in public filings.
+apptronik,Apptronik,US,units,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+apptronik,Apptronik,US,revenue,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+apptronik,Apptronik,US,paid_deployment,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+apptronik,Apptronik,US,hours,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+apptronik,Apptronik,US,customer,✓,deployment_evidence.csv:15,https://apptronik.com/news-collection/apptronik-and-mercedes-benz-enter-commercial-agreement,Mercedes-Benz (pilot)
+apptronik,Apptronik,US,related_parties,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+apptronik,Apptronik,US,audited,✗,,,Private company; no audited statements found in public filings.
+agility-robotics,Agility Robotics,US,units,✗,shipments.csv:19,https://humanoid.guide/humanoid-deployments-in-2026-favor-figure-and-agility/,No shipments figure; the company states capacity: ≤10000.
+agility-robotics,Agility Robotics,US,revenue,✓,valuations_revenue.csv:13,https://www.sec.gov/Archives/edgar/data/1727116/000121390026105334/ea0297114-05.htm,$1.78M in 2025
+agility-robotics,Agility Robotics,US,paid_deployment,✗,deployment_evidence.csv:5,https://www.sec.gov/Archives/edgar/data/1727116/000121390026105334/ea0297114-05.htm,"Hours are disclosed, but not how many robots are at work."
+agility-robotics,Agility Robotics,US,hours,✓,deployment_evidence.csv:5,https://www.sec.gov/Archives/edgar/data/1727116/000121390026105334/ea0297114-05.htm,">65,000 hours (commercial)"
+agility-robotics,Agility Robotics,US,customer,✓,deployment_evidence.csv:5,https://www.sec.gov/Archives/edgar/data/1727116/000121390026105334/ea0297114-05.htm,"Nine customer facilities (deployed or committed), incl. Schaeffler, GXO, Toyota Motor Manufacturing Canada, Mercado Libre (commercial)"
+agility-robotics,Agility Robotics,US,related_parties,✓,company_financial_items.csv:2; valuations_revenue.csv:13,https://www.sec.gov/Archives/edgar/data/1727116/000121390026105334/ea0297114-05.htm,"$1.13M in FY2025, 63.5% of revenue"
+agility-robotics,Agility Robotics,US,audited,✓,valuations_revenue.csv:12,https://www.sec.gov/Archives/edgar/data/1727116/000121390026105334/ea0297114-05.htm,Audited statements in an SEC filing.
+1x-technologies,1X Technologies,US,units,✗,shipments.csv:17,https://en.cryptonomist.ch/2026/08/27/softbank-1x-technologies-acquisition/,No shipments figure; the company states preorders: >10000.
+1x-technologies,1X Technologies,US,revenue,◐,company_financial_items.csv:16,https://data.brreg.no/regnskapsregisteret/regnskap/929455568,"324,166,904 NOK in FY2025, from the statutory accounts of a subsidiary only; group revenue not disclosed"
+1x-technologies,1X Technologies,US,paid_deployment,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+1x-technologies,1X Technologies,US,hours,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+1x-technologies,1X Technologies,US,customer,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+1x-technologies,1X Technologies,US,related_parties,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+1x-technologies,1X Technologies,US,audited,◐,company_financial_items.csv:17,https://data.brreg.no/regnskapsregisteret/regnskap/929455568,Only a subsidiary's statutory accounts are public and audited; no group accounts.
+tesla,Tesla (Optimus),US,units,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+tesla,Tesla (Optimus),US,revenue,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+tesla,Tesla (Optimus),US,paid_deployment,✗,deployment_evidence.csv:8,https://electrek.co/2026/04/22/tesla-optimus-production-fremont-model-sx-line/,Only internal use: 0 robots (2026-01).
+tesla,Tesla (Optimus),US,hours,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+tesla,Tesla (Optimus),US,customer,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+tesla,Tesla (Optimus),US,related_parties,✗,,,Not found in the public sources reviewed as of 12 Oct 2026 (see GAPS.md).
+tesla,Tesla (Optimus),US,audited,◐,,,Group accounts are audited (Nasdaq: TSLA); the humanoid programme is not reported separately.

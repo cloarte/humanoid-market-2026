@@ -1,0 +1,27 @@
+{
+  "title": "Humanoid Market 2026: an open dataset on shipments, valuations and disclosure (Physical AI, by the Numbers #1)",
+  "upload_type": "dataset",
+  "description": "Source-cited dataset on the humanoid robot market: units shipped, financing rounds and valuations, revenue, sector venture funding, published forecasts, prices and costs, public evidence of robots doing useful work, line items quoted verbatim from company filings, a valuation-per-robot metric and a disclosure scorecard of what each humanoid maker discloses. Every value cites a public source; currency conversions use Federal Reserve H.10 rates. Data cut-off: 2026-10-12. Data under CC BY 4.0; code under MIT.",
+  "creators": [
+    {
+      "name": "Loarte Susano, Carlos"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "keywords": [
+    "humanoid robots",
+    "physical AI",
+    "venture capital",
+    "disclosure",
+    "dataset"
+  ],
+  "version": "0.1.0",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/cloarte/humanoid-market-2026",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}

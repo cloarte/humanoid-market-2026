@@ -1,0 +1,36 @@
+figure,value,rows_used,expected,matches,note
+Global humanoid shipments 2025 (Omdia),"13,318",shipments.csv:2,"13,318",yes,
+AgiBot + Unitree + UBTech share of 2025 shipments,"77.8% (10,368 units)",shipments.csv:3; shipments.csv:4; shipments.csv:5; shipments.csv:2,77.8%,yes,
+Tesla + Figure + Agility share of 2025 shipments,3.4% (450 units),shipments.csv:6; shipments.csv:7; shipments.csv:8; shipments.csv:2,3.4%,yes,
+Humanoid VC 2023 → 2025 (PitchBook),$430M → $6.1B (14.2×),sector_funding.csv:13; sector_funding.csv:15,$430M → $6.1B (≈14×),yes,
+Humanoid VC 2026 to 15 May (PitchBook),>$5B,sector_funding.csv:17,>$5B,yes,
+Robotics VC 2021 (Crunchbase),$14.1B,sector_funding.csv:3,$14.1B,yes,
+Robotics VC 2025 (Crunchbase),$15B,sector_funding.csv:7,$15B,yes,
+Robotics VC 2026 to 22 Jun (Crunchbase),$18.8B,sector_funding.csv:8,$18.8B,yes,
+Valuation ÷ 2025 revenue: agility-robotics,"1,402.9×",funding_rounds.csv:18; valuations_revenue.csv:13,"≈1,403×",yes,SPAC merger value (pre-money) ÷ audited FY2025 net sales
+Valuation ÷ 2025 revenue: skild-ai,466.7×,funding_rounds.csv:6; valuations_revenue.csv:9,≈467× (R),yes,revenue self-reported (R); valuation a lower bound
+Valuation ÷ 2025 revenue: unitree,111.8×,valuations_revenue.csv:11; valuations_revenue.csv:5,≈112×,yes,stock market value 30 Sep 2026 ÷ FY2025 revenue (final prospectus)
+Valuation ÷ 2025 revenue: ubtech,16.7×,valuations_revenue.csv:10; valuations_revenue.csv:15,≈17×,yes,stock market value 30 Sep 2026 ÷ FY2025 revenue
+Valuation ÷ 2025 revenue: agibot,13.8×,funding_rounds.csv:23; valuations_revenue.csv:17,≈14×,yes,revenue stated by its CEO (RMB 1.05B); valuation from Mar 2025
+Unitree stock market value 30 Sep 2026,$27.2B,valuations_revenue.csv:11,$27.2B,yes,
+UBTech stock market value 30 Sep 2026,$4.77B,valuations_revenue.csv:10,$4.77B,yes,
+Unitree change vs first-day close,-46.7%,valuations_revenue.csv:11; valuations_revenue.csv:3,-47%,yes,"RMB terms: 182,170,738,736 (close 450.40 on 30 Sep) vs 341,800,000,000 (first-day close 845 on 19 Aug)"
+Agility FY2025 net sales (audited),"$1,781,967",valuations_revenue.csv:13,$1.78M,yes,
+Agility FY2025 share of sales to related parties,63.5%,company_financial_items.csv:2; valuations_revenue.csv:13,63.5%,yes,
+Agility FY2025 net loss,"$138,086,332",valuations_revenue.csv:13,$138M,yes,
+Agility H1 2026 net sales (unaudited),"$174,362",valuations_revenue.csv:14,$174K,yes,
+Agility H1 2026 net loss,"$361,893,207",valuations_revenue.csv:14,$362M,yes,
+Agility H1 2026 stock compensation: increase vs H1 2025,"$252,488,065 (total $280,622,619)",company_financial_items.csv:4; company_financial_items.csv:5,~$252.5M stock comp,yes,$252.5M is the increase over H1 2025; total H1 2026 stock compensation is $280.6M
+Agility cash and equivalents at 30 Jun 2026,"$14,651,873",company_financial_items.csv:7,$14.7M,yes,
+Agility deferred revenue at 31 Dec 2025,"293,533",company_financial_items.csv:3,"293,533",yes,
+Agility warrants per robot (related-party customer),453,company_financial_items.csv:9,453,yes,
+Agility Digit 5 orders (S-4/A),$300M,deployment_evidence.csv:7,$300M,yes,"the filing says '$300 million', not 'more than' (press wording)"
+Unitree FY2025 revenue (final prospectus),"RMB 1,699M ($243M)",valuations_revenue.csv:5,"RMB 1,699M ($243M)",yes,
+AgiBot FY2025 revenue (stated by its CEO),"RMB 1,050M ($150M)",valuations_revenue.csv:17,"RMB 1,050M ($150M)",yes,
+Unitree FY2025 net profit (final prospectus),RMB 278M,valuations_revenue.csv:5,RMB 278M,yes,adjusted profit (扣非) RMB 591M is not used
+"Unitree 2025 humanoid shipments (company, final prospectus)","5,511",shipments.csv:9,"5,511",yes,
+Forecast BofA Global Research 2026 ÷ 2025 shipments,6.8×,forecasts.csv:12; shipments.csv:2,6.8×,yes,
+Forecast Goldman Sachs 2030 ÷ 2025 shipments,≥19×,forecasts.csv:4; shipments.csv:2,≥19×,yes,
+Forecast BofA Global Research 2030 ÷ 2025 shipments,90×,forecasts.csv:13; shipments.csv:2,90×,yes,
+Forecast Interact Analysis 2035 ÷ 2025 shipments,≥53×,forecasts.csv:6; shipments.csv:2,≥53×,yes,
+Forecast Omdia 2035 ÷ 2025 shipments,195×,forecasts.csv:15; shipments.csv:2,195×,yes,

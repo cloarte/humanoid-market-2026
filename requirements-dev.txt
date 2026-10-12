@@ -1,0 +1,4 @@
+# Development tools (lint, format, tests). Runtime deps come from requirements.txt.
+-r requirements.txt
+ruff==0.17.0
+pytest==9.1.1

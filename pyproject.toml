@@ -1,0 +1,15 @@
+# Tool configuration only; runtime dependencies are pinned in requirements.txt.
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "UP", "SIM", "I", "N", "RUF"]
+allowed-confusables = ["–", "×"]  # typographic en dash and multiplication sign in chart labels
+
+[tool.ruff.lint.isort]
+known-first-party = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
