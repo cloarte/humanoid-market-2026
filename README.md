@@ -1,6 +1,7 @@
 # humanoid-market-2026
 
 [![validate](https://github.com/cloarte/humanoid-market-2026/actions/workflows/validate.yml/badge.svg)](https://github.com/cloarte/humanoid-market-2026/actions/workflows/validate.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23328638.svg)](https://doi.org/10.5281/zenodo.23328638)
 
 Dataset and code behind **Physical AI, by the Numbers #1 — "Volume in China, Valuation in America:
 A Deep Dive into the Humanoid Robot Market"** (XBayAmauta).
@@ -77,6 +78,10 @@ python -m charts.all                                  # rebuild every output in 
 
 See [`CITATION.cff`](CITATION.cff). Loarte Susano, Carlos (2026). *Humanoid Market 2026: an open
 dataset on shipments, valuations and disclosure (Physical AI, by the Numbers #1)* (v0.1.0) [Data set].
+Zenodo. https://doi.org/10.5281/zenodo.23328638
+
+The data (tables, derived tables and documentation) are archived on Zenodo: the DOI above always points to
+the latest version; v0.1.0 is https://doi.org/10.5281/zenodo.23328639. The code stays in this repository.
 
 ## License
 

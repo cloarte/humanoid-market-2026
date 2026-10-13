@@ -2,8 +2,8 @@ The datasets in this folder (data/*.csv) and the generated files in outputs/
 are licensed under the Creative Commons Attribution 4.0 International License
 (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
 
-Attribution: Loarte Susano, Carlos R. (2026). humanoid-market-2026:
-Physical AI, by the Numbers #1. Cite via CITATION.cff.
+Attribution: Loarte Susano, Carlos (2026). Humanoid Market 2026: an open dataset
+on shipments, valuations and disclosure (Physical AI, by the Numbers #1). Cite via CITATION.cff.
 
 Each row cites its own public source in `source_url`. Figures remain the
 statements of those sources; this license covers the compilation, the

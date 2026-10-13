@@ -13,6 +13,14 @@ authors:
   - family-names: "Loarte Susano"
     given-names: "Carlos"
 version: "0.1.0"
+doi: "10.5281/zenodo.23328638"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23328638"
+    description: "All versions (concept DOI)"
+  - type: doi
+    value: "10.5281/zenodo.23328639"
+    description: "Version 0.1.0 of the data package on Zenodo"
 repository-code: "https://github.com/cloarte/humanoid-market-2026"
 license:
   - CC-BY-4.0
