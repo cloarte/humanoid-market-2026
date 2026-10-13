@@ -70,3 +70,17 @@ def test_takeaway_word_limit():
     assert style.check_takeaway("Fifteen words or fewer is fine.")
     with pytest.raises(ValueError):
         style.check_takeaway(" ".join(["word"] * 16))
+
+
+def test_gif_must_not_start_empty(tmp_path, monkeypatch):
+    """The first GIF frame is the cover on phones and in e-mail: it must be the complete chart."""
+    from charts.render import save_gif
+
+    monkeypatch.setattr(style, "OUTPUTS", tmp_path)
+
+    def builds_from_empty(fig, t):
+        if t >= 0.1:
+            fig.text(0.5, 0.5, "chart")
+
+    with pytest.raises(ValueError, match="never start empty"):
+        save_gif(builds_from_empty, "test", seconds=0.2)

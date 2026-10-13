@@ -91,6 +91,7 @@ PNG_WIDTH_PX = 2400  # @2x of a 1200 px layout
 GIF_WIDTH_PX = 1200
 GIF_MAX_BYTES = 8 * 1024 * 1024
 GIF_SECONDS = (6.0, 10.0)  # allowed total duration
+GIF_HOLD_FIRST_S = 1.5  # first frame (the cover: the complete chart) is held this long
 GIF_HOLD_FINAL_S = 2.5  # last frame is held this long
 
 # --- Label rules ---------------------------------------------------------------

@@ -11,7 +11,7 @@ from dataclasses import dataclass
 import pandas as pd
 
 from charts import data
-from charts.render import new_figure, ramp, save_gif
+from charts.render import highlight, new_figure, opacity, save_gif
 from src import style
 
 NAME = "c02_units_vs_valuation"
@@ -20,8 +20,10 @@ SUBTITLE = "Humanoid makers: robots shipped in 2025 and latest valuation, US dol
 TAKEAWAY = "China ships the robots; America holds the valuations."
 GROUPS = (("CN", "China"), ("US", "United States"), ("GB", "United Kingdom"))
 BAR_HEIGHT = 0.62
-# GIF timing (seconds): each country group grows in turn, then the takeaway fades in.
-TIMING = {"CN": (0.6, 2.4), "US": (2.6, 4.0), "GB": (4.2, 4.8)}
+# GIF timing (seconds): dim everything, light up China's shipments, then America's valuations, back to full.
+GIF_FADE = (0.5, 1.0, 5.0, 5.6)
+GIF_PHASES = [(1.2, 2.0), (2.8, 3.6)]
+GIF_SECONDS = 6.0
 
 
 @dataclass
@@ -94,13 +96,14 @@ def layout(rows: list[Row]) -> list[tuple[str, object]]:
 
 
 def draw(fig, t: float = 99.0) -> None:
-    """Draw the chart; `t` (seconds) drives the GIF animation, the default draws everything."""
+    """Draw the chart. For the GIF, `t` (seconds) moves the emphasis, never the data: the chart starts and ends
+    complete; in between everything dims, China's shipments light up, then America's valuations."""
+    dim, china_left, us_right = highlight(t, GIF_PHASES, GIF_FADE)
     rows = build_rows()
     items = layout(rows)
     style.add_title(fig, TITLE, SUBTITLE)
     top = style.add_notes(fig, notes())
-    if (a := ramp(t, 5.2, 6.0)) > 0:
-        style.add_takeaway(fig, TAKEAWAY, y=top + 0.02).set_alpha(a)
+    style.add_takeaway(fig, TAKEAWAY, y=top + 0.02)
     bottom, height = top + 0.11, 0.83 - (top + 0.11)
     names = fig.add_axes((0.04, bottom, 0.17, height))
     left = fig.add_axes((0.23, bottom, 0.33, height))
@@ -132,11 +135,10 @@ def draw(fig, t: float = 99.0) -> None:
                 ax.axhline(i + 0.55, color=style.INK, alpha=style.HAIRLINE_ALPHA, linewidth=0.6)
             continue
         r: Row = item  # type: ignore[assignment]
-        grow = ramp(t, *TIMING.get(r.country, TIMING["GB"]))
-        if grow == 0:
-            continue
         color = style.country_color(r.country)
-        names.text(0, i, r.name, fontsize=style.SIZE_LABEL - 1, color=style.INK, va="center", alpha=min(1, grow * 2))
+        a_left = opacity(dim, china_left if r.country == "CN" else 0.0)
+        a_right = opacity(dim, us_right if r.country == "US" else 0.0)
+        names.text(0, i, r.name, fontsize=style.SIZE_LABEL - 1, color=style.INK, va="center")
         if r.units is None:
             left.text(
                 0,
@@ -146,36 +148,33 @@ def draw(fig, t: float = 99.0) -> None:
                 color=style.INK_MUTED,
                 va="center",
                 style="italic",
-                alpha=grow,
+                alpha=a_left,
             )
         else:
-            left.barh(i, r.units * grow, height=BAR_HEIGHT, color=color)
+            left.barh(i, r.units, height=BAR_HEIGHT, color=color, alpha=a_left)
             end, label = r.units, f"{r.units:,.0f}"
             if r.own:
-                left.barh(
-                    i, (r.own[0] - r.units) * grow, left=r.units * grow, height=BAR_HEIGHT, color=color, alpha=0.35
-                )
+                left.barh(i, r.own[0] - r.units, left=r.units, height=BAR_HEIGHT, color=color, alpha=0.35 * a_left)
                 end = r.own[0]
                 label = f"{r.units:,.0f} → {style.QUALIFIER_SYMBOL[r.own[1]]}{r.own[0]:,.0f}"
-            if grow == 1:
-                left.text(end + label_gap, i, label, fontsize=style.SIZE_TICK, color=style.INK, va="center")
-        right.barh(i, r.valuation * grow, height=BAR_HEIGHT, color=color)
-        if grow == 1:
-            right.text(
-                r.valuation + right.get_xlim()[1] * 0.012,
-                i,
-                r.valuation_text,
-                fontsize=style.SIZE_TICK,
-                color=style.INK,
-                va="center",
-            )
+            left.text(end + label_gap, i, label, fontsize=style.SIZE_TICK, color=style.INK, va="center", alpha=a_left)
+        right.barh(i, r.valuation, height=BAR_HEIGHT, color=color, alpha=a_right)
+        right.text(
+            r.valuation + right.get_xlim()[1] * 0.012,
+            i,
+            r.valuation_text,
+            fontsize=style.SIZE_TICK,
+            color=style.INK,
+            va="center",
+            alpha=a_right,
+        )
 
 
 def main() -> None:
     fig = new_figure()
     draw(fig)
     print(style.save_png(fig, NAME))
-    print(save_gif(draw, NAME, seconds=7.0))
+    print(save_gif(draw, NAME, seconds=GIF_SECONDS))
 
 
 if __name__ == "__main__":

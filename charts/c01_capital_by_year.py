@@ -9,7 +9,7 @@ import matplotlib.ticker as mticker
 import pandas as pd
 
 from charts import data
-from charts.render import new_figure, ramp, save_gif
+from charts.render import highlight, new_figure, opacity, save_gif
 from src import style
 
 NAME = "c01_capital_by_year"
@@ -30,7 +30,13 @@ NOTES = [
     ("Data and sources:", "github.com/cloarte/humanoid-market-2026"),
 ]
 YEARS = list(range(2020, 2027))
-SECONDS_PER_YEAR = 0.6
+# GIF timing (seconds): dim everything, light up the record years for all robotics, then the humanoid surge,
+# back to full. The chart is complete in the first and last frames.
+GIF_FADE = (0.5, 1.0, 5.0, 5.6)
+GIF_PHASES = [(1.2, 2.0), (2.8, 3.6)]
+GIF_SECONDS = 6.0
+RECORD_YEARS = (2025, 2026)  # all robotics, phase 1
+SURGE_YEARS = (2024, 2025, 2026)  # humanoids, phase 2
 
 
 def series() -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -55,9 +61,11 @@ def _partial_label(period_end: str) -> str:
 
 
 def draw(fig, t: float = 99.0) -> None:
+    """Draw the chart. For the GIF, `t` (seconds) moves the emphasis, never the data."""
+    dim, record, surge = highlight(t, GIF_PHASES, GIF_FADE)
     robotics, humanoid = series()
     style.add_title(fig, TITLE, SUBTITLE)
-    _legend(fig, ramp(t, 0.1, 0.6))
+    _legend(fig)
     ax = fig.add_axes((0.08, 0.31, 0.86, 0.52))
     ax.set_ylim(0, 21e9)
     ax.set_xlim(YEARS[0] - 0.6, YEARS[-1] + 0.6)
@@ -67,10 +75,7 @@ def draw(fig, t: float = 99.0) -> None:
     ax.set_xticks(YEARS)
     ax.spines["left"].set_visible(False)
     ax.tick_params(axis="y", length=0)
-    for i, year in enumerate(YEARS):
-        grow = ramp(t, 0.6 + i * SECONDS_PER_YEAR, 0.6 + (i + 1) * SECONDS_PER_YEAR)
-        if grow == 0:
-            continue
+    for year in YEARS:
         for frame, width, color, top in (
             (robotics, 0.72, style.SLATE_LIGHT, True),
             (humanoid, 0.34, style.SLATE, False),
@@ -79,18 +84,19 @@ def draw(fig, t: float = 99.0) -> None:
                 continue
             row = frame.loc[year]
             partial = bool(row["period_end"])
+            lit = (record if year in RECORD_YEARS else 0.0) if top else (surge if year in SURGE_YEARS else 0.0)
+            alpha = opacity(dim, lit)
             ax.bar(
                 year,
-                row["amount"] * grow,
+                row["amount"],
                 width=width,
                 color=color,
                 edgecolor=style.PAPER,
                 linewidth=1.5,
                 hatch=style.YTD_HATCH if partial else None,
                 zorder=2 if top else 3,
+                alpha=alpha,
             )
-            if grow < 1:
-                continue
             value = style.fmt_usd(row["amount"], row["amount_qualifier"])
             if top:
                 label = value + (f"\n{_partial_label(row['period_end'])}" if partial else "")
@@ -104,6 +110,7 @@ def draw(fig, t: float = 99.0) -> None:
                     fontsize=style.SIZE_TICK,
                     color=style.INK,
                     linespacing=1.3,
+                    alpha=alpha,
                 )
             else:
                 label = value + (f" ({_partial_label(row['period_end'])})" if partial else "")
@@ -117,13 +124,13 @@ def draw(fig, t: float = 99.0) -> None:
                     fontsize=style.SIZE_TICK - 1,
                     color=style.INK,
                     fontweight="semibold",
+                    alpha=alpha,
                 )
     top = style.add_notes(fig, NOTES)
-    if (a := ramp(t, 5.2, 6.0)) > 0:
-        style.add_takeaway(fig, TAKEAWAY, y=top + 0.02).set_alpha(a)
+    style.add_takeaway(fig, TAKEAWAY, y=top + 0.02)
 
 
-def _legend(fig, alpha: float) -> None:
+def _legend(fig) -> None:
     lg = fig.add_axes((0.0, 0.85, 1.0, 0.045))
     lg.set_axis_off()
     lg.set_xlim(0, 1)
@@ -134,8 +141,8 @@ def _legend(fig, alpha: float) -> None:
         (style.SLATE, None, "Humanoid robots (PitchBook)"),
         (style.SLATE_LIGHT, style.YTD_HATCH, "Year to date"),
     ):
-        lg.bar(x, 0.6, width=0.012, bottom=0.2, color=color, hatch=hatch, edgecolor=style.PAPER, alpha=alpha)
-        lg.text(x + 0.012, 0.5, label, fontsize=style.SIZE_TICK, color=style.INK, va="center", alpha=alpha)
+        lg.bar(x, 0.6, width=0.012, bottom=0.2, color=color, hatch=hatch, edgecolor=style.PAPER)
+        lg.text(x + 0.012, 0.5, label, fontsize=style.SIZE_TICK, color=style.INK, va="center")
         x += 0.03 + 0.0062 * len(label)
 
 
@@ -143,7 +150,7 @@ def main() -> None:
     fig = new_figure()
     draw(fig)
     print(style.save_png(fig, NAME))
-    print(save_gif(draw, NAME, seconds=6.5))
+    print(save_gif(draw, NAME, seconds=GIF_SECONDS))
 
 
 if __name__ == "__main__":
